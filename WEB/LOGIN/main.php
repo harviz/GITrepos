@@ -36,27 +36,7 @@ case "no":
     echo '<h2>You <strong>NOT</strong> loged in.</h2>';
     break;
 case "yes":
-    //if(!isset($_SESSION['username'])){
-    //    header("location:main.php");
-    //}
     echo '<h2>You <strong>ARE</strong> loged in.</h2>';
-    //if(isset($_SESSION['username']))
-    //{
-    /*
-        $var = (time() - $_SESSION['started'] - 60);
-        echo $var;
-        if($var > 0){
-            //Logout, destroy session, etc.
-            echo '<h2>You <strong>NOT</strong> loged in.</h2>';
-            header("location:main.php?action=logout");
-        }
-        else {
-            $_SESSION['started'] = time();
-            echo '<h2>You <strong>ARE</strong> logged in.</h2>';
-            header("location:main.php");
-        }
-    */
-    //}
     break;
 case "check":
     $username=$_POST['username'];
