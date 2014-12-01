@@ -2,6 +2,7 @@
 session_start();
 //$_SESSION['started'] = time();
 
+
 if (isset($_SESSION['started']))
 {
 $var = (time() - $_SESSION['started'] - 60); //60 seconds
