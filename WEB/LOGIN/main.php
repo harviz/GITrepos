@@ -1,20 +1,4 @@
 <?php
-session_start();
-//$_SESSION['started'] = time();
-
-if (isset($_SESSION['started']))
-{
-$var = (time() - $_SESSION['started'] - 60); //60 seconds
-//echo $var;
-if($var > 0){
-    //Logout, destroy session, etc.
-    session_destroy();
-    header("location:main.php");
-}
-else {
-    $_SESSION['started'] = time();
-}
-}
 //DB Connection information
 $dbname="nova";
 $dbuser="root";
@@ -24,6 +8,20 @@ $host="localhost";
 $cid = mysql_connect($host,$dbuser,$dbpwd);
 if (!$cid) { print "ERROR: " . mysql_error() . "n";    }
 mysql_select_db("$dbname") or die(mysql_error());
+
+session_start();
+
+if (isset($_SESSION['started']))
+{
+    $var = (time() - $_SESSION['started'] - 60); //60 seconds
+    //echo $var;
+    if($var > 0){
+        //Logout, destroy session, etc.
+        session_destroy();
+        header("location:main.php");
+    }
+    else {$_SESSION['started'] = time();}
+}
 
 switch ( $_GET['action'] ) {
 case "logout":
