@@ -13,8 +13,6 @@ if($var > 0){
 }
 else {
     $_SESSION['started'] = time();
-    //echo '<h2>You <strong>ARE</strong> logged in.</h2>';
-    //header("location:main.php");
 }
 }
 //DB Connection information
@@ -51,7 +49,6 @@ case "check":
         $_SESSION['started'] = time();
         $_POST['action'] = 'yes';
         header("location:main.php");
-        //header("location:main.php?action=yes");
     }
     else {
         header("location:main.php?action=no");
@@ -63,9 +60,6 @@ default:
     }
 if(isset($_SESSION['username'])){
     echo $username;
-    //$_POST['action'] = 'yes';
-    //header("location:main.php");
-    //header("location:main.php?action=yes");
 }
 ?>
 <form name="form" method="post" action="main.php?action=check">
